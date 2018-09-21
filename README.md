@@ -1,5 +1,5 @@
 # About
-Tracy Tang个人Vue项目
+Tracy Tang个人Vue项目(webpack4版本)
 
 # 使用方法
 ```
