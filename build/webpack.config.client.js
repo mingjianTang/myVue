@@ -67,14 +67,14 @@ if (isDev) {
         devServer,
         plugins: defaultPlugins.concat([
             new webpack.HotModuleReplacementPlugin(),
-            new webpack.NoEmitOnErrorsPlugin()
+            // new webpack.NoEmitOnErrorsPlugin()
         ])
     })
 } else {
     config = merge(baseConfig, {
         entry: {
             app: path.join(__dirname, '../client/main.js'),
-            vendor: ['vue']
+            // vendor: ['vue']
         },
         output: {
             filename: '[name].[chunkhash:8].js'
@@ -96,17 +96,39 @@ if (isDev) {
                             'stylus-loader'
                         ]
                     })
+                },
+                {
+                    test: /\.less/,
+                    use: ExtractPlugin.extract({
+                        fallback: 'vue-style-loader',
+                        use: [
+                            'css-loader',
+                            {
+                                loader: 'postcss-loader',
+                                options: {
+                                    sourceMap: true,
+                                }
+                            },
+                            'less-loader'
+                        ]
+                    })
                 }
             ]
         },
+        optimization: {
+            splitChunks: {
+                chunks: 'all'
+            },
+            runtimeChunk: true
+        },  
         plugins: defaultPlugins.concat([
             new ExtractPlugin('styles.[contentHash:8].css'),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor'
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'runtime'
-            })
+            // new webpack.optimize.CommonsChunkPlugin({
+            //     name: 'vendor'
+            // }),
+            // new webpack.optimize.CommonsChunkPlugin({
+            //     name: 'runtime'
+            // })
         ])
     })
 }
