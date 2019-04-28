@@ -1,9 +1,9 @@
 # About
-Tracy Tang个人Vue项目(webpack3)
+Tracy Tang个人Vue项目(webpack3 + vue2.5)
 
 # 使用方法
 ```
-git clone https://github.com/Jokcy/vue-todo-tech.git
+git clone https://github.com/mingjianTang/myVue.git
 ```
 进入项目目录，运行
 ```
