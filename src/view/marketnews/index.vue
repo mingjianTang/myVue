@@ -4,7 +4,6 @@
       <h4 class="title">市场快讯</h4>
     </div>
     <div class="panel b-b b-t bg-light">
-      <div class="content-operate"></div>
       <div class="content-box-grid">
         <el-table :data="tableData" border style="width: 100%">
           <el-table-column prop="TitleNoTag" label="新闻内容" min-width="200" :show-overflow-tooltip="true"></el-table-column>

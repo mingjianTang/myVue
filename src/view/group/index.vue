@@ -7,7 +7,7 @@
       <div class="content-operate">
         <div class="pull-left" style="margin-top: 10px;">
           <el-button type="success" size="medium" icon="el-icon-plus" @click="groupAdd()">添加</el-button>
-          <el-button type="warning" size="medium" icon="el-icon-edit" @click="groupEdit()" :disabled="multipleSelection.length===0">修改</el-button>
+          <el-button type="warning" size="medium" icon="el-icon-edit" @click="groupEdit()" :disabled="!multipleSelection.id">修改</el-button>
         </div>
       </div>
       <div class="content-box-grid">
