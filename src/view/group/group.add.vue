@@ -31,11 +31,7 @@
         <div class="el-row" v-for="(item,index) in ruleForm.weightList" :key="index">
           <div class="el-col el-col-8">
             <el-form-item label="通道" :prop="'weightList.' + index + '.id'" :rules="[{ required: true, message: '请选择通道' }]">
-<<<<<<< HEAD
               <el-select v-model="item.id" placeholder="请选择通道" @change="channelChange">
-=======
-              <el-select v-model="item.id" placeholder="请选择通道">
->>>>>>> 374ec6791dab738176eeb9b6f8a8e31d55d229c7
                 <el-option
                   v-for="(value,key) in channelList[index]"
                   :key="key"
@@ -52,7 +48,6 @@
           </div>
           <div class="el-col el-col-4">
             <el-button plain icon="el-icon-delete" circle @click="channelDel(index)" v-if="ruleForm.weightList.length>1"></el-button>
-<<<<<<< HEAD
             <el-button plain icon="el-icon-plus" circle @click="channelAdd(index)" v-if="ruleForm.weightList.length<channelAllLength"></el-button>
           </div>
         </div>
@@ -61,16 +56,6 @@
             <el-button type="primary" @click="submitForm('ruleForm')">保存</el-button>
           </el-form-item>
         </div>
-=======
-            <el-button plain icon="el-icon-plus" circle @click="channelAdd(index)" v-if="ruleForm.weightList.length<channelAll.length"></el-button>
-          </div>
-        </div>
-        <el-form-item>
-          <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-          <el-button @click="resetForm('ruleForm')">重置</el-button>
-          <el-button @click="haha()">点我呀</el-button>
-        </el-form-item>
->>>>>>> 374ec6791dab738176eeb9b6f8a8e31d55d229c7
       </el-form>
     </div>
   </div>
